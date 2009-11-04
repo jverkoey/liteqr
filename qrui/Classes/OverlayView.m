@@ -73,8 +73,8 @@ static const CGFloat kPadding = 10;
   }
 
   CGRect frame = _imageView.frame;
-  frame.origin.x = 0;
-  frame.origin.y = self.frame.size.height - _imageView.frame.size.height;
+  frame.origin.x = self.cropRect.origin.x;
+  frame.origin.y = self.cropRect.origin.y;
   _imageView.frame = frame;
 }
 

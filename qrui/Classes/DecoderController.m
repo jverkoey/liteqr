@@ -121,13 +121,12 @@ static const NSTimeInterval kTakePictureTimeInterval = 5;
 	CGRect scaledRect = CGRectZero;
 
 	CGFloat scaledX = 480 * baseImage.size.width / baseImage.size.height;
-	CGFloat offsetX = (scaledX - 320) / -2;
 
 	scaledRect.origin = CGPointMake(0, 0.0);
 	scaledRect.size.width  = scaledX;
 	scaledRect.size.height = 480;
 
-	UIGraphicsBeginImageContext(targetSize);	
+	UIGraphicsBeginImageContext(targetSize);
 	[baseImage drawInRect:scaledRect];
 	UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
@@ -137,11 +136,25 @@ static const NSTimeInterval kTakePictureTimeInterval = 5;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+- (UIImage*) croppedImage:(UIImage*)baseImage {
+	CGSize targetSize = _overlayView.cropRect.size;	
+
+	UIGraphicsBeginImageContext(targetSize);
+	[baseImage drawAtPoint:CGPointMake(-_overlayView.cropRect.origin.x, -_overlayView.cropRect.origin.y)];
+	UIImage* result = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+
+  return result;
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void) imagePickerController:(UIImagePickerController*)picker 
          didFinishPickingMediaWithInfo:(NSDictionary*)info {
   UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
-  UIImage* scaled = [self scaledImage:image];
+  UIImage* scaled = [self croppedImage:[self scaledImage:image]];
 
   _overlayView.image = scaled;
 }
