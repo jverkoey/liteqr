@@ -36,20 +36,61 @@ static const CGFloat kPadding = 10;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void) dealloc {
+  [_imageView release];
+  _imageView = nil;
+
+  [super dealloc];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)drawRect:(CGRect)rect {
   CGContextRef c = UIGraphicsGetCurrentContext();
 
-  CGFloat rectSize = rect.size.width - kPadding * 2;
+  CGRect cropRect = [self cropRect];
 
   CGFloat white[4] = {1.0f, 1.0f, 1.0f, 1.0f};
   CGContextSetStrokeColor(c, white);
   CGContextBeginPath(c);
-  CGContextMoveToPoint(c, kPadding, (rect.size.height - rectSize) / 2);
-  CGContextAddLineToPoint(c, rect.size.width - kPadding, (rect.size.height - rectSize) / 2);
-  CGContextAddLineToPoint(c, rect.size.width - kPadding, (rect.size.height + rectSize) / 2);
-  CGContextAddLineToPoint(c, kPadding, (rect.size.height + rectSize) / 2);
-  CGContextAddLineToPoint(c, kPadding, (rect.size.height - rectSize) / 2);
+  CGContextMoveToPoint(c, cropRect.origin.x, cropRect.origin.y);
+  CGContextAddLineToPoint(c, cropRect.origin.x + cropRect.size.width, cropRect.origin.y);
+  CGContextAddLineToPoint(c, cropRect.origin.x + cropRect.size.width, cropRect.origin.y + cropRect.size.height);
+  CGContextAddLineToPoint(c, cropRect.origin.x, cropRect.origin.y + cropRect.size.height);
+  CGContextAddLineToPoint(c, cropRect.origin.x, cropRect.origin.y);
   CGContextStrokePath(c);
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (void) setImage:(UIImage*)image {
+  if( nil == _imageView ) {
+    _imageView = [[UIImageView alloc] initWithImage:image];
+    _imageView.alpha = 0.5;
+    [self addSubview:_imageView];
+  } else {
+    _imageView.image = image;
+  }
+
+  CGRect frame = _imageView.frame;
+  frame.origin.x = 0;
+  frame.origin.y = self.frame.size.height - _imageView.frame.size.height;
+  _imageView.frame = frame;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (UIImage*) image {
+  return _imageView.image;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGRect) cropRect {
+  CGFloat rectSize = self.frame.size.width - kPadding * 2;
+
+  return CGRectMake(kPadding, (self.frame.size.height - rectSize) / 2, rectSize, rectSize);
+}
+
 
 @end
