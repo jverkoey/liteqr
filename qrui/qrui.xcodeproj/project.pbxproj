@@ -17,7 +17,7 @@
 		6E8D856910A0FC4000DB7C32 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D856810A0FC4000DB7C32 /* OverlayView.m */; };
 		6E8D858610A0FDB500DB7C32 /* QRImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D858510A0FDB500DB7C32 /* QRImagePickerController.m */; };
 		6E8D877510A108B500DB7C32 /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8D877410A108B500DB7C32 /* libiconv.2.dylib */; };
-		6E8D891610A1301E00DB7C32 /* Decoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D891410A1301E00DB7C32 /* Decoder.mm */; };
+		6E8D895D10A1355000DB7C32 /* Decoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D895B10A1355000DB7C32 /* Decoder.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,8 @@
 		6E8D858410A0FDB500DB7C32 /* QRImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRImagePickerController.h; sourceTree = "<group>"; };
 		6E8D858510A0FDB500DB7C32 /* QRImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRImagePickerController.m; sourceTree = "<group>"; };
 		6E8D877410A108B500DB7C32 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = usr/lib/libiconv.2.dylib; sourceTree = SDKROOT; };
-		6E8D891410A1301E00DB7C32 /* Decoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Decoder.mm; sourceTree = "<group>"; };
-		6E8D891510A1301E00DB7C32 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
-		6E8D891710A1302200DB7C32 /* DecoderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecoderDelegate.h; sourceTree = "<group>"; };
+		6E8D895B10A1355000DB7C32 /* Decoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Decoder.mm; sourceTree = "<group>"; };
+		6E8D895C10A1355000DB7C32 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* qrui-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "qrui-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +78,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6E8D891210A1301800DB7C32 /* Decoder */,
+				6E8D895E10A1355200DB7C32 /* Decoder */,
 				6E8D847910A0EAD900DB7C32 /* Decoder Controller */,
 				1D3623240D0F684500981E51 /* qruiAppDelegate.h */,
 				1D3623250D0F684500981E51 /* qruiAppDelegate.m */,
@@ -173,12 +172,11 @@
 			name = "Image Picker";
 			sourceTree = "<group>";
 		};
-		6E8D891210A1301800DB7C32 /* Decoder */ = {
+		6E8D895E10A1355200DB7C32 /* Decoder */ = {
 			isa = PBXGroup;
 			children = (
-				6E8D891410A1301E00DB7C32 /* Decoder.mm */,
-				6E8D891510A1301E00DB7C32 /* Decoder.h */,
-				6E8D891710A1302200DB7C32 /* DecoderDelegate.h */,
+				6E8D895C10A1355000DB7C32 /* Decoder.h */,
+				6E8D895B10A1355000DB7C32 /* Decoder.mm */,
 			);
 			name = Decoder;
 			sourceTree = "<group>";
@@ -257,7 +255,7 @@
 				6E8D847C10A0EAFB00DB7C32 /* DecoderController.m in Sources */,
 				6E8D856910A0FC4000DB7C32 /* OverlayView.m in Sources */,
 				6E8D858610A0FDB500DB7C32 /* QRImagePickerController.m in Sources */,
-				6E8D891610A1301E00DB7C32 /* Decoder.mm in Sources */,
+				6E8D895D10A1355000DB7C32 /* Decoder.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
