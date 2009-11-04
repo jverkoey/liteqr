@@ -12,7 +12,26 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		6E8D846D10A0EA8D00DB7C32 /* libqrlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8D846C10A0EA8900DB7C32 /* libqrlib.a */; };
+		6E8D847C10A0EAFB00DB7C32 /* DecoderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D847B10A0EAFB00DB7C32 /* DecoderController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E8D846B10A0EA8900DB7C32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E8D846710A0EA8900DB7C32 /* qrlib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libqrlib.a */;
+			remoteInfo = qrlib;
+		};
+		6E8D846E10A0EA9600DB7C32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E8D846710A0EA8900DB7C32 /* qrlib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* qrlib */;
+			remoteInfo = qrlib;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -23,6 +42,9 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* qrui_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrui_Prefix.pch; sourceTree = "<group>"; };
+		6E8D846710A0EA8900DB7C32 /* qrlib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = qrlib.xcodeproj; path = ../qrlib/qrlib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		6E8D847A10A0EAFB00DB7C32 /* DecoderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecoderController.h; sourceTree = "<group>"; };
+		6E8D847B10A0EAFB00DB7C32 /* DecoderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecoderController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* qrui-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "qrui-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -34,6 +56,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				6E8D846D10A0EA8D00DB7C32 /* libqrlib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +66,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6E8D847910A0EAD900DB7C32 /* Decoder Controller */,
 				1D3623240D0F684500981E51 /* qruiAppDelegate.h */,
 				1D3623250D0F684500981E51 /* qruiAppDelegate.m */,
 			);
@@ -89,11 +113,29 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E8D846710A0EA8900DB7C32 /* qrlib.xcodeproj */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E8D846810A0EA8900DB7C32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E8D846C10A0EA8900DB7C32 /* libqrlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E8D847910A0EAD900DB7C32 /* Decoder Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E8D847A10A0EAFB00DB7C32 /* DecoderController.h */,
+				6E8D847B10A0EAFB00DB7C32 /* DecoderController.m */,
+			);
+			name = "Decoder Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +152,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6E8D846F10A0EA9600DB7C32 /* PBXTargetDependency */,
 			);
 			name = qrui;
 			productName = qrui;
@@ -126,12 +169,28 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6E8D846810A0EA8900DB7C32 /* Products */;
+					ProjectRef = 6E8D846710A0EA8900DB7C32 /* qrlib.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* qrui */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6E8D846C10A0EA8900DB7C32 /* libqrlib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libqrlib.a;
+			remoteRef = 6E8D846B10A0EA8900DB7C32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -150,16 +209,26 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* qruiAppDelegate.m in Sources */,
+				6E8D847C10A0EAFB00DB7C32 /* DecoderController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E8D846F10A0EA9600DB7C32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = qrlib;
+			targetProxy = 6E8D846E10A0EA9600DB7C32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeffrey Verkoeyen";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -167,6 +236,7 @@
 				GCC_PREFIX_HEADER = qrui_Prefix.pch;
 				INFOPLIST_FILE = "qrui-Info.plist";
 				PRODUCT_NAME = qrui;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9FC7A556-FEE9-48A7-BBF5-6CC1D57B226B";
 			};
 			name = Debug;
 		};
@@ -174,11 +244,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeffrey Verkoeyen";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = qrui_Prefix.pch;
 				INFOPLIST_FILE = "qrui-Info.plist";
 				PRODUCT_NAME = qrui;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9FC7A556-FEE9-48A7-BBF5-6CC1D57B226B";
 			};
 			name = Release;
 		};

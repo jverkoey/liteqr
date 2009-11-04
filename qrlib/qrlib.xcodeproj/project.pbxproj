@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E8D847310A0EAB700DB7C32 /* LiteQRDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E8D847110A0EAB700DB7C32 /* LiteQRDecoder.h */; };
+		6E8D847410A0EAB700DB7C32 /* LiteQRDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D847210A0EAB700DB7C32 /* LiteQRDecoder.m */; };
 		AA747D9F0F9514B9006C5449 /* qrlib_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* qrlib_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E8D847110A0EAB700DB7C32 /* LiteQRDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiteQRDecoder.h; sourceTree = "<group>"; };
+		6E8D847210A0EAB700DB7C32 /* LiteQRDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiteQRDecoder.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* qrlib_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrlib_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libqrlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqrlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6E8D847110A0EAB700DB7C32 /* LiteQRDecoder.h */,
+				6E8D847210A0EAB700DB7C32 /* LiteQRDecoder.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -79,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* qrlib_Prefix.pch in Headers */,
+				6E8D847310A0EAB700DB7C32 /* LiteQRDecoder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E8D847410A0EAB700DB7C32 /* LiteQRDecoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
