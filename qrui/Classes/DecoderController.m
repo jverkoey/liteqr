@@ -16,7 +16,11 @@
 
 #import "DecoderController.h"
 
-static const NSTimeInterval kTakePictureTimeInterval = 2;
+#import "OverlayView.h"
+#import "QRImagePickerController.h"
+
+
+static const NSTimeInterval kTakePictureTimeInterval = 10;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,6 +35,8 @@ static const NSTimeInterval kTakePictureTimeInterval = 2;
 
   [_imagePicker release];
   _imagePicker = nil;
+  [_overlayView release];
+  _overlayView = nil;
 }
 
 
@@ -59,12 +65,14 @@ static const NSTimeInterval kTakePictureTimeInterval = 2;
     [alertView show];
 
   } else {
-    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker = [[QRImagePickerController alloc] init];
 
-    _imagePicker.sourceType = type;
+    _overlayView = [[OverlayView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
     _imagePicker.delegate = self;
     _imagePicker.allowsEditing = NO;
     _imagePicker.showsCameraControls = NO;
+    _imagePicker.cameraOverlayView = _overlayView;
 
     [self presentModalViewController:_imagePicker animated:YES];
 
@@ -81,7 +89,6 @@ static const NSTimeInterval kTakePictureTimeInterval = 2;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void) imagePickerController:(UIImagePickerController*)picker 
          didFinishPickingMediaWithInfo:(NSDictionary*)info {
-  NSLog(@"Took a picture");
 }
 
 
