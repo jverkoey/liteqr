@@ -20,6 +20,7 @@
 #import "QRImagePickerController.h"
 
 #import "Decoder.h"
+#import "TwoDDecoderResult.h"
 
 
 static const NSTimeInterval kTakePictureTimeInterval = 5;
@@ -154,62 +155,15 @@ static const NSTimeInterval kTakePictureTimeInterval = 5;
          didFinishPickingMediaWithInfo:(NSDictionary*)info {
   UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
-  UIImage* scaled = [self croppedImage:[self scaledImage:image]];
+  UIImage* scaled = [self scaledImage:image];
 
-  _overlayView.image = scaled;
-}
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void) imagePickerController: (UIImagePickerController*)picker
-         didFinishPickingImage: (UIImage*)image
-                   editingInfo: (NSDictionary*)editingInfo {
-  NSLog(@"hi");
-/*
-  UIImage *imageToDecode = image;
-	CGSize size = [image size];
-	CGRect cropRect = CGRectMake(0.0, 0.0, size.width, size.height);
-	
-#ifdef DEBUG
-  NSLog(@"picked image size = (%f, %f)", size.width, size.height);
-#endif
-  NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
-  
-  if (editingInfo) {
-    UIImage *originalImage = [editingInfo objectForKey:UIImagePickerControllerOriginalImage];
-    if (originalImage) {
-#ifdef DEBUG
-      NSLog(@"original image size = (%f, %f)", originalImage.size.width, originalImage.size.height);
-#endif
-      NSValue *cropRectValue = [editingInfo objectForKey:UIImagePickerControllerCropRect];
-      if (cropRectValue) {
-        cropRect = [cropRectValue CGRectValue];
-#ifdef DEBUG
-        NSLog(@"crop rect = (%f, %f) x (%f, %f)", CGRectGetMinX(cropRect), CGRectGetMinY(cropRect), CGRectGetWidth(cropRect), CGRectGetHeight(cropRect));
-#endif
-        if (([picker sourceType] == UIImagePickerControllerSourceTypeSavedPhotosAlbum) &&
-						[@"2.1" isEqualToString:systemVersion]) {
-          // adjust crop rect to work around bug in iPhone OS 2.1 when selecting from the photo roll
-          cropRect.origin.x *= 2.5;
-          cropRect.origin.y *= 2.5;
-          cropRect.size.width *= 2.5;
-          cropRect.size.height *= 2.5;
-#ifdef DEBUG
-          NSLog(@"2.1-adjusted crop rect = (%f, %f) x (%f, %f)", CGRectGetMinX(cropRect), CGRectGetMinY(cropRect), CGRectGetWidth(cropRect), CGRectGetHeight(cropRect));
-#endif
-        }
-				
-				imageToDecode = originalImage;
-      }
-    }
+  if( nil == _decoder ) {
+    _decoder = [[Decoder alloc] init];
+    _decoder.delegate = self;
   }
-  
-  [[picker parentViewController] dismissModalViewControllerAnimated:YES];
-  [imageToDecode retain];
-  [picker release];
-  [self.decoder decodeImage:imageToDecode cropRect:cropRect];
-  [imageToDecode release];
-  [self updateToolbar];*/
+  [_decoder decodeImage:scaled cropRect:_overlayView.cropRect];
+
+  _overlayView.image = [self croppedImage:scaled];
 }
 
 
@@ -234,25 +188,25 @@ static const NSTimeInterval kTakePictureTimeInterval = 5;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)decoder:(Decoder *)decoder willDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset {
-  NSLog(@"willDecodeImage");
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)decoder:(Decoder *)decoder decodingImage:(UIImage *)image usingSubset:(UIImage *)subset progress:(NSString *)message {
-  NSLog(@"decodingImage %@", message);
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)decoder:(Decoder *)decoder didDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset withResult:(TwoDDecoderResult *)result {
   NSLog(@"didDecodeImage");
+  NSLog(@"%@", result.text);
+  NSLog(@"%@", result.points);
+  _overlayView.points = result.points;
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)decoder:(Decoder *)decoder failedToDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset reason:(NSString *)reason {
-  NSLog(@"failedToDecodeImage %@", reason);
 }
 
 

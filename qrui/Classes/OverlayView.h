@@ -18,10 +18,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 @interface OverlayView : UIView {
-  UIImageView* _imageView;
+  UIImageView*  _imageView;
+  NSArray*      _points;
 }
 
-@property (nonatomic, retain) UIImage* image;
-@property (nonatomic, readonly) CGRect cropRect;
+@property (nonatomic, retain)   UIImage*  image;
+@property (nonatomic, retain)   NSArray*  points;
+
+@property (nonatomic, readonly) CGRect    cropRect;
 
 @end
