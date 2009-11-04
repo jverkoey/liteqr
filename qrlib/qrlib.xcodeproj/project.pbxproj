@@ -91,6 +91,8 @@
 		6E8D86BA10A1047000DB7C32 /* ResultPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E8D866610A1047000DB7C32 /* ResultPoint.h */; };
 		6E8D86BB10A1047000DB7C32 /* TransformingMonochromeBitmapSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D866710A1047000DB7C32 /* TransformingMonochromeBitmapSource.cpp */; };
 		6E8D86BC10A1047000DB7C32 /* TransformingMonochromeBitmapSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E8D866810A1047000DB7C32 /* TransformingMonochromeBitmapSource.h */; };
+		6E8D894810A1332200DB7C32 /* TwoDDecoderResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E8D894610A1332200DB7C32 /* TwoDDecoderResult.h */; };
+		6E8D894910A1332200DB7C32 /* TwoDDecoderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D894710A1332200DB7C32 /* TwoDDecoderResult.m */; };
 		AA747D9F0F9514B9006C5449 /* qrlib_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* qrlib_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -180,6 +182,8 @@
 		6E8D866610A1047000DB7C32 /* ResultPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultPoint.h; sourceTree = "<group>"; };
 		6E8D866710A1047000DB7C32 /* TransformingMonochromeBitmapSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformingMonochromeBitmapSource.cpp; sourceTree = "<group>"; };
 		6E8D866810A1047000DB7C32 /* TransformingMonochromeBitmapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformingMonochromeBitmapSource.h; sourceTree = "<group>"; };
+		6E8D894610A1332200DB7C32 /* TwoDDecoderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoDDecoderResult.h; sourceTree = "<group>"; };
+		6E8D894710A1332200DB7C32 /* TwoDDecoderResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoDDecoderResult.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* qrlib_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrlib_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libqrlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqrlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +239,7 @@
 		6E8D860F10A1047000DB7C32 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6E8D894510A1331600DB7C32 /* Decoder */,
 				6E8D861410A1047000DB7C32 /* common */,
 				6E8D863C10A1047000DB7C32 /* qrcode */,
 				6E8D861010A1047000DB7C32 /* BarcodeFormat.cpp */,
@@ -363,6 +368,15 @@
 			path = detector;
 			sourceTree = "<group>";
 		};
+		6E8D894510A1331600DB7C32 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				6E8D894610A1332200DB7C32 /* TwoDDecoderResult.h */,
+				6E8D894710A1332200DB7C32 /* TwoDDecoderResult.m */,
+			);
+			name = Decoder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -413,6 +427,7 @@
 				6E8D86B810A1047000DB7C32 /* Result.h in Headers */,
 				6E8D86BA10A1047000DB7C32 /* ResultPoint.h in Headers */,
 				6E8D86BC10A1047000DB7C32 /* TransformingMonochromeBitmapSource.h in Headers */,
+				6E8D894810A1332200DB7C32 /* TwoDDecoderResult.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +519,7 @@
 				6E8D86B710A1047000DB7C32 /* Result.cpp in Sources */,
 				6E8D86B910A1047000DB7C32 /* ResultPoint.cpp in Sources */,
 				6E8D86BB10A1047000DB7C32 /* TransformingMonochromeBitmapSource.cpp in Sources */,
+				6E8D894910A1332200DB7C32 /* TwoDDecoderResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
