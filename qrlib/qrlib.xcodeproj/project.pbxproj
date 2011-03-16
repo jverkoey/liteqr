@@ -465,7 +465,11 @@
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "qrlib" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* qrlib */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -545,6 +549,7 @@
 				GCC_PREFIX_HEADER = qrlib_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = qrlib;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -559,6 +564,7 @@
 				GCC_PREFIX_HEADER = qrlib_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = qrlib;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

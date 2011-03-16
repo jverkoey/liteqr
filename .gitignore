@@ -2,3 +2,5 @@ build/
 intermediates/
 *.mode1v3
 *.pbxuser
+*.xcworkspace
+xcuserdata
