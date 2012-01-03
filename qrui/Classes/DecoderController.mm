@@ -19,7 +19,7 @@
 #import "OverlayView.h"
 #import "QRImagePickerController.h"
 
-#import "Decoder.h"
+#import "QRDecoder.h"
 #import "TwoDDecoderResult.h"
 
 
@@ -158,7 +158,7 @@ static const NSTimeInterval kTakePictureTimeInterval = 5;
   UIImage* scaled = [self scaledImage:image];
 
   if( nil == _decoder ) {
-    _decoder = [[Decoder alloc] init];
+    _decoder = [[QRDecoder alloc] init];
     _decoder.delegate = self;
   }
   [_decoder decodeImage:scaled cropRect:_overlayView.cropRect];
@@ -187,17 +187,17 @@ static const NSTimeInterval kTakePictureTimeInterval = 5;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)decoder:(Decoder *)decoder willDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset {
+- (void)decoder:(QRDecoder *)decoder willDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset {
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)decoder:(Decoder *)decoder decodingImage:(UIImage *)image usingSubset:(UIImage *)subset progress:(NSString *)message {
+- (void)decoder:(QRDecoder *)decoder decodingImage:(UIImage *)image usingSubset:(UIImage *)subset progress:(NSString *)message {
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)decoder:(Decoder *)decoder didDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset withResult:(TwoDDecoderResult *)result {
+- (void)decoder:(QRDecoder *)decoder didDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset withResult:(TwoDDecoderResult *)result {
   NSLog(@"didDecodeImage");
   NSLog(@"%@", result.text);
   NSLog(@"%@", result.points);
@@ -206,7 +206,7 @@ static const NSTimeInterval kTakePictureTimeInterval = 5;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)decoder:(Decoder *)decoder failedToDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset reason:(NSString *)reason {
+- (void)decoder:(QRDecoder *)decoder failedToDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset reason:(NSString *)reason {
 }
 
 

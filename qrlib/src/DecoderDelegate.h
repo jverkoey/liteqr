@@ -21,14 +21,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class Decoder;
+@class QRDecoder;
 @class TwoDDecoderResult;
 
 @protocol DecoderDelegate
 
-- (void)decoder:(Decoder *)decoder willDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset;
-- (void)decoder:(Decoder *)decoder decodingImage:(UIImage *)image usingSubset:(UIImage *)subset progress:(NSString *)message;
-- (void)decoder:(Decoder *)decoder didDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset withResult:(TwoDDecoderResult *)result;
-- (void)decoder:(Decoder *)decoder failedToDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset reason:(NSString *)reason;
+- (void)decoder:(QRDecoder *)decoder willDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset;
+- (void)decoder:(QRDecoder *)decoder decodingImage:(UIImage *)image usingSubset:(UIImage *)subset progress:(NSString *)message;
+- (void)decoder:(QRDecoder *)decoder didDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset withResult:(TwoDDecoderResult *)result;
+- (void)decoder:(QRDecoder *)decoder failedToDecodeImage:(UIImage *)image usingSubset:(UIImage *)subset reason:(NSString *)reason;
 
 @end

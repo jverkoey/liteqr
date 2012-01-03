@@ -23,7 +23,7 @@
 #import <UIKit/UIKit.h>
 #import "DecoderDelegate.h"
 
-@interface Decoder : NSObject {
+@interface QRDecoder : NSObject {
 	UIImage *image;
 	CGRect cropRect;
   UIImage *subsetImage;

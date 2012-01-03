@@ -20,7 +20,7 @@
  * limitations under the License.
  */
 
-#import "Decoder.h"
+#import "QRDecoder.h"
 #import "TwoDDecoderResult.h"
 
 #include "QRCodeReader.h"
@@ -30,7 +30,7 @@
 
 using namespace qrcode;
 
-@implementation Decoder
+@implementation QRDecoder
 
 @synthesize image;
 @synthesize cropRect;
